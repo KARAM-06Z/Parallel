@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="minor_view">
+        <div class="full_screen_image_container_hidden">
+            <div class="close_button_container">
+                <button class='close_button'>
+                    <img src='icons/close(64px).png'>
+                </button>
+            </div>
+
+            <div class="image_container">
+                <img class="full_screen_image">
+            </div>
+        </div>
+    </div>
+    
+    <div class="main_view">
+        <div class="site_header">
+            <div class="header_content">
+                <div class="header_logo_container_hidden">
+                    <svg  class="header_logo" viewBox="0 0 447 112" xmlns="http://www.w3.org/2000/svg">
+                        <path class="logo_alphapet" d="M52.128 35.672C52.128 41.24 50.208 45.88 46.368 49.592C42.592 53.24 36.8 55.064 28.992 55.064H16.128V83H7.392V16.088H28.992C36.544 16.088 42.272 17.912 46.176 21.56C50.144 25.208 52.128 29.912 52.128 35.672ZM28.992 47.864C33.856 47.864 37.44 46.808 39.744 44.696C42.048 42.584 43.2 39.576 43.2 35.672C43.2 27.416 38.464 23.288 28.992 23.288H16.128V47.864H28.992ZM59.7218 56.504C59.7218 51.128 60.8098 46.424 62.9858 42.392C65.1618 38.296 68.1378 35.128 71.9138 32.888C75.7538 30.648 80.0098 29.528 84.6818 29.528C89.2898 29.528 93.2898 30.52 96.6818 32.504C100.074 34.488 102.602 36.984 104.266 39.992V30.392H113.098V83H104.266V73.208C102.538 76.28 99.9458 78.84 96.4898 80.888C93.0978 82.872 89.1298 83.864 84.5858 83.864C79.9138 83.864 75.6898 82.712 71.9138 80.408C68.1378 78.104 65.1618 74.872 62.9858 70.712C60.8098 66.552 59.7218 61.816 59.7218 56.504ZM104.266 56.6C104.266 52.632 103.466 49.176 101.866 46.232C100.266 43.288 98.0898 41.048 95.3378 39.512C92.6498 37.912 89.6738 37.112 86.4098 37.112C83.1458 37.112 80.1698 37.88 77.4818 39.416C74.7938 40.952 72.6498 43.192 71.0498 46.136C69.4498 49.08 68.6498 52.536 68.6498 56.504C68.6498 60.536 69.4498 64.056 71.0498 67.064C72.6498 70.008 74.7938 72.28 77.4818 73.88C80.1698 75.416 83.1458 76.184 86.4098 76.184C89.6738 76.184 92.6498 75.416 95.3378 73.88C98.0898 72.28 100.266 70.008 101.866 67.064C103.466 64.056 104.266 60.568 104.266 56.6ZM136.597 38.936C138.133 35.928 140.309 33.592 143.125 31.928C146.005 30.264 149.493 29.432 153.589 29.432V38.456H151.285C141.493 38.456 136.597 43.768 136.597 54.392V83H127.861V30.392H136.597V38.936ZM160.409 56.504C160.409 51.128 161.497 46.424 163.673 42.392C165.849 38.296 168.825 35.128 172.601 32.888C176.441 30.648 180.697 29.528 185.369 29.528C189.977 29.528 193.977 30.52 197.369 32.504C200.761 34.488 203.289 36.984 204.953 39.992V30.392H213.785V83H204.953V73.208C203.225 76.28 200.633 78.84 197.177 80.888C193.785 82.872 189.817 83.864 185.273 83.864C180.601 83.864 176.377 82.712 172.601 80.408C168.825 78.104 165.849 74.872 163.673 70.712C161.497 66.552 160.409 61.816 160.409 56.504ZM204.953 56.6C204.953 52.632 204.153 49.176 202.553 46.232C200.953 43.288 198.777 41.048 196.025 39.512C193.337 37.912 190.361 37.112 187.097 37.112C183.833 37.112 180.857 37.88 178.169 39.416C175.481 40.952 173.337 43.192 171.737 46.136C170.137 49.08 169.337 52.536 169.337 56.504C169.337 60.536 170.137 64.056 171.737 67.064C173.337 70.008 175.481 72.28 178.169 73.88C180.857 75.416 183.833 76.184 187.097 76.184C190.361 76.184 193.337 75.416 196.025 73.88C198.777 72.28 200.953 70.008 202.553 67.064C204.153 64.056 204.953 60.568 204.953 56.6Z"/>
+                        <path class="logo_alphapet" d="M374.392 54.68C374.392 56.344 374.296 58.104 374.104 59.96H332.056C332.376 65.144 334.136 69.208 337.336 72.152C340.6 75.032 344.536 76.472 349.144 76.472C352.92 76.472 356.056 75.608 358.552 73.88C361.112 72.088 362.904 69.72 363.928 66.776H373.336C371.928 71.832 369.112 75.96 364.888 79.16C360.664 82.296 355.416 83.864 349.144 83.864C344.152 83.864 339.672 82.744 335.704 80.504C331.8 78.264 328.728 75.096 326.488 71C324.248 66.84 323.128 62.04 323.128 56.6C323.128 51.16 324.216 46.392 326.392 42.296C328.568 38.2 331.608 35.064 335.512 32.888C339.48 30.648 344.024 29.528 349.144 29.528C354.136 29.528 358.552 30.616 362.392 32.792C366.232 34.968 369.176 37.976 371.224 41.816C373.336 45.592 374.392 49.88 374.392 54.68ZM365.368 52.856C365.368 49.528 364.632 46.68 363.16 44.312C361.688 41.88 359.672 40.056 357.112 38.84C354.616 37.56 351.832 36.92 348.76 36.92C344.344 36.92 340.568 38.328 337.432 41.144C334.36 43.96 332.6 47.864 332.152 52.856H365.368Z"/>
+                        <path class="logo_arrow" d="M220.553 105.395C220.771 106.194 221.595 106.665 222.395 106.447L235.419 102.895C236.218 102.677 236.689 101.852 236.471 101.053C236.253 100.254 235.429 99.7828 234.63 100.001L223.052 103.158L219.895 91.581C219.677 90.7818 218.852 90.3106 218.053 90.5285C217.254 90.7465 216.783 91.5711 217.001 92.3704L220.553 105.395ZM276.698 6.25579L220.698 104.256L223.302 105.744L279.302 7.74421L276.698 6.25579Z"/>
+                        <path class="logo_arrow" d="M312.885 6.61179C312.67 5.81159 311.848 5.33672 311.048 5.55113L298.008 9.04519C297.207 9.2596 296.732 10.0821 296.947 10.8823C297.161 11.6825 297.984 12.1574 298.784 11.943L310.375 8.83714L313.481 20.4282C313.695 21.2284 314.518 21.7033 315.318 21.4889C316.118 21.2745 316.593 20.452 316.379 19.6518L312.885 6.61179ZM256.299 105.5L312.735 7.75002L310.137 6.25002L253.701 104L256.299 105.5Z"/>
+                        <path class="logo_arrow" d="M436.885 6.61179C436.67 5.81159 435.848 5.33672 435.048 5.55113L422.008 9.04519C421.207 9.2596 420.732 10.0821 420.947 10.8823C421.161 11.6825 421.984 12.1574 422.784 11.943L434.375 8.83714L437.481 20.4282C437.695 21.2284 438.518 21.7033 439.318 21.4889C440.118 21.2745 440.593 20.452 440.379 19.6518L436.885 6.61179ZM380.299 105.5L436.735 7.75002L434.137 6.25002L377.701 104L380.299 105.5Z"/>
+                    </svg>                                            
+                </div>
+
+                <div class="header_navigation_container_hidden">
+                    <ul class="navigation_list">
+                        <li class="navigation_item"><a id="home" href="#">Home</a></li>
+                        <li class="navigation_item"><a href="#">Store</a></li>
+                        <li class="navigation_item"><a href="#">News</a></li>
+                    </ul>
+                </div>
+
+                <div class="header_right_section_container">
+                    <div class="header_right_section_content">
+                        <div class="header_search_container">
+                            <div class="header_search_bar">
+                                <form action="#">
+                                    <input type="text" placeholder="Search...">
+                                    <button type="submit" class="search_submit_button"><img src="icons/loupe(18px).png" alt="Search_icon"></button>
+                                </form>
+                            </div>
+                        </div>
+    
+                        <div class="header_log_in_container">
+                            <a href="#"><img src="icons/user(24px).png" alt="Search_icon">Log in</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="side_bar_button_container">
+                    <button class="side_bar_button" view_side_bar="false">
+                        <img class="side_bar_icon" src="icons/SideBar(32px).png" alt="SideBar">
+                    </button>
+                </div>
+            </div>
+
+            <div class="side_bar_container">
+                <div class="side_bar">
+                    <div class="side_bar_content">
+                        <div class="side_bar_search_container">
+                            <form action="#">
+                                <input type="text" placeholder="Search...">
+                                <button type="submit" class="search_submit_button"><img src="icons/loupe(18px)-DARK.png" alt="Search_icon"></button>
+                            </form>
+                        </div>
+    
+                        <a class="side_bar_link" href="#">Log in</a>
+                        <a id="side_bar_home" class="side_bar_link" href="#">Home</a>
+                        <a class="side_bar_link" href="#">Store</a>
+                        <a class="side_bar_link" href="#">News</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="site_content">
+            <div class="website_descreption_section">
+                <div class="website_descreption_section_inner">
+                    <div class="website_descreption">
+                        <div class="website_descreption_logo_container">
+                            <svg  class="website_descreption_logo" viewBox="0 0 447 112" xmlns="http://www.w3.org/2000/svg">
+                                <path class="logo_alphapet" d="M52.128 35.672C52.128 41.24 50.208 45.88 46.368 49.592C42.592 53.24 36.8 55.064 28.992 55.064H16.128V83H7.392V16.088H28.992C36.544 16.088 42.272 17.912 46.176 21.56C50.144 25.208 52.128 29.912 52.128 35.672ZM28.992 47.864C33.856 47.864 37.44 46.808 39.744 44.696C42.048 42.584 43.2 39.576 43.2 35.672C43.2 27.416 38.464 23.288 28.992 23.288H16.128V47.864H28.992ZM59.7218 56.504C59.7218 51.128 60.8098 46.424 62.9858 42.392C65.1618 38.296 68.1378 35.128 71.9138 32.888C75.7538 30.648 80.0098 29.528 84.6818 29.528C89.2898 29.528 93.2898 30.52 96.6818 32.504C100.074 34.488 102.602 36.984 104.266 39.992V30.392H113.098V83H104.266V73.208C102.538 76.28 99.9458 78.84 96.4898 80.888C93.0978 82.872 89.1298 83.864 84.5858 83.864C79.9138 83.864 75.6898 82.712 71.9138 80.408C68.1378 78.104 65.1618 74.872 62.9858 70.712C60.8098 66.552 59.7218 61.816 59.7218 56.504ZM104.266 56.6C104.266 52.632 103.466 49.176 101.866 46.232C100.266 43.288 98.0898 41.048 95.3378 39.512C92.6498 37.912 89.6738 37.112 86.4098 37.112C83.1458 37.112 80.1698 37.88 77.4818 39.416C74.7938 40.952 72.6498 43.192 71.0498 46.136C69.4498 49.08 68.6498 52.536 68.6498 56.504C68.6498 60.536 69.4498 64.056 71.0498 67.064C72.6498 70.008 74.7938 72.28 77.4818 73.88C80.1698 75.416 83.1458 76.184 86.4098 76.184C89.6738 76.184 92.6498 75.416 95.3378 73.88C98.0898 72.28 100.266 70.008 101.866 67.064C103.466 64.056 104.266 60.568 104.266 56.6ZM136.597 38.936C138.133 35.928 140.309 33.592 143.125 31.928C146.005 30.264 149.493 29.432 153.589 29.432V38.456H151.285C141.493 38.456 136.597 43.768 136.597 54.392V83H127.861V30.392H136.597V38.936ZM160.409 56.504C160.409 51.128 161.497 46.424 163.673 42.392C165.849 38.296 168.825 35.128 172.601 32.888C176.441 30.648 180.697 29.528 185.369 29.528C189.977 29.528 193.977 30.52 197.369 32.504C200.761 34.488 203.289 36.984 204.953 39.992V30.392H213.785V83H204.953V73.208C203.225 76.28 200.633 78.84 197.177 80.888C193.785 82.872 189.817 83.864 185.273 83.864C180.601 83.864 176.377 82.712 172.601 80.408C168.825 78.104 165.849 74.872 163.673 70.712C161.497 66.552 160.409 61.816 160.409 56.504ZM204.953 56.6C204.953 52.632 204.153 49.176 202.553 46.232C200.953 43.288 198.777 41.048 196.025 39.512C193.337 37.912 190.361 37.112 187.097 37.112C183.833 37.112 180.857 37.88 178.169 39.416C175.481 40.952 173.337 43.192 171.737 46.136C170.137 49.08 169.337 52.536 169.337 56.504C169.337 60.536 170.137 64.056 171.737 67.064C173.337 70.008 175.481 72.28 178.169 73.88C180.857 75.416 183.833 76.184 187.097 76.184C190.361 76.184 193.337 75.416 196.025 73.88C198.777 72.28 200.953 70.008 202.553 67.064C204.153 64.056 204.953 60.568 204.953 56.6Z"/>
+                                <path class="logo_alphapet" d="M374.392 54.68C374.392 56.344 374.296 58.104 374.104 59.96H332.056C332.376 65.144 334.136 69.208 337.336 72.152C340.6 75.032 344.536 76.472 349.144 76.472C352.92 76.472 356.056 75.608 358.552 73.88C361.112 72.088 362.904 69.72 363.928 66.776H373.336C371.928 71.832 369.112 75.96 364.888 79.16C360.664 82.296 355.416 83.864 349.144 83.864C344.152 83.864 339.672 82.744 335.704 80.504C331.8 78.264 328.728 75.096 326.488 71C324.248 66.84 323.128 62.04 323.128 56.6C323.128 51.16 324.216 46.392 326.392 42.296C328.568 38.2 331.608 35.064 335.512 32.888C339.48 30.648 344.024 29.528 349.144 29.528C354.136 29.528 358.552 30.616 362.392 32.792C366.232 34.968 369.176 37.976 371.224 41.816C373.336 45.592 374.392 49.88 374.392 54.68ZM365.368 52.856C365.368 49.528 364.632 46.68 363.16 44.312C361.688 41.88 359.672 40.056 357.112 38.84C354.616 37.56 351.832 36.92 348.76 36.92C344.344 36.92 340.568 38.328 337.432 41.144C334.36 43.96 332.6 47.864 332.152 52.856H365.368Z"/>
+                                <path class="logo_arrow" d="M220.553 105.395C220.771 106.194 221.595 106.665 222.395 106.447L235.419 102.895C236.218 102.677 236.689 101.852 236.471 101.053C236.253 100.254 235.429 99.7828 234.63 100.001L223.052 103.158L219.895 91.581C219.677 90.7818 218.852 90.3106 218.053 90.5285C217.254 90.7465 216.783 91.5711 217.001 92.3704L220.553 105.395ZM276.698 6.25579L220.698 104.256L223.302 105.744L279.302 7.74421L276.698 6.25579Z"/>
+                                <path class="logo_arrow" d="M312.885 6.61179C312.67 5.81159 311.848 5.33672 311.048 5.55113L298.008 9.04519C297.207 9.2596 296.732 10.0821 296.947 10.8823C297.161 11.6825 297.984 12.1574 298.784 11.943L310.375 8.83714L313.481 20.4282C313.695 21.2284 314.518 21.7033 315.318 21.4889C316.118 21.2745 316.593 20.452 316.379 19.6518L312.885 6.61179ZM256.299 105.5L312.735 7.75002L310.137 6.25002L253.701 104L256.299 105.5Z"/>
+                                <path class="logo_arrow" d="M436.885 6.61179C436.67 5.81159 435.848 5.33672 435.048 5.55113L422.008 9.04519C421.207 9.2596 420.732 10.0821 420.947 10.8823C421.161 11.6825 421.984 12.1574 422.784 11.943L434.375 8.83714L437.481 20.4282C437.695 21.2284 438.518 21.7033 439.318 21.4889C440.118 21.2745 440.593 20.452 440.379 19.6518L436.885 6.61179ZM380.299 105.5L436.735 7.75002L434.137 6.25002L377.701 104L380.299 105.5Z"/>
+                            </svg>
+                        </div>
+
+                        <div class="website_descreption_header">
+                            <h1>Your all in one game store.</h1>
+                        </div>
+
+                        <div class="website_descreption_paragraph">
+                            <p>All your favourite games you will find them here with great prices.</p>
+                            <p>We didnt forget about deals because you will love them, especially the surprises at every end of the month.</p>
+                            <p>We know that you love to game and so do we respect that, so we created PARALLEL for you.</p>
+                        </div>
+                    </div>
+
+                    <div class="game_images_collection_container">
+                        <div class="backlight"></div>
+
+                        <div class="game_collection_images">
+                            <div class="game_image_big" style="background-image: url(images/the_division.png); top: 7%; left:32%;"></div>
+                            <div class="game_image_big" style="background-image: url(images/RDR2.png); top: 24%; left:77%;"></div>
+                            <div class="game_image_big" style="background-image: url(images/control.png); top: 68%; left:44%;"></div>
+                            <div class="game_image_big" style="background-image: url(images/the_medium.png); top: 14%; left:9%;"></div>
+                            <div class="game_image_big" style="background-image: url(images/mafia_defenitive.png); top: 34%; left:38%;"></div>
+                            <div class="game_image_big" style="background-image: url(images/nier.png); top: 47%; left:71%;"></div>
+                            <div class="game_image_big" style="background-image: url(images/gta5.png); top: 57%; left:16%;"></div>
+                            <div class="game_image_medium" style="background-image: url(images/r6s.png); top: 32%; left:21%;"></div>
+                            <div class="game_image_medium" style="background-image: url(images/bf4.png); top: 12%; left:62%;"></div>
+                            <div class="game_image_medium" style="background-image: url(images/the_witcher.png); top: 54%; left:59%;"></div>
+                            <div class="game_image_medium" style="background-image: url(images/gris.png); top: 67%; left:35%;"></div>
+                            <div class="game_image_medium" style="background-image: url(images/observation.png); top: 81%; left:66%;"></div>
+                            <div class="game_image_medium" style="background-image: url(images/noita.png); top: 26%; left:52%;"></div>
+                            <div class="game_image_medium" style="background-image: url(images/the_outer_worlds.png); top: 64%; left:84%;"></div>
+                            <div class="game_image_medium" style="background-image: url(images/soma.jpg); top: 84%; left:11%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game_cards_section">
+                <div class="hr_line"></div>
+
+                <div class="recent_section">
+                    <div class="cards_section_header_container">
+                        <h1 class="cards_section_header">Recently Added</h1>
+                    </div>
+
+                    <div class="cards_section_recent">
+                        <div class="cards_set_container_recent">
+                            <div class="cards_set_section_recent"></div>
+                        </div>
+                    </div>
+    
+                    <div class="navigation_buttons_container">
+                        <button class="navigation_button_container_left_for_recent">
+                            <svg class="navigation_arrow_left" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+                                <g>
+                                    <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
+                                </g>
+                            </svg>
+                        </button>
+    
+                        <button class="navigation_button_container_right_for_recent">
+                            <svg class="navigation_arrow_right" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+                                <g>
+                                    <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="favourites_section">
+                    <div class="cards_section_header_container">
+                        <h1 class="cards_section_header">Most Favourites</h1>
+                    </div>
+
+                    <div class="cards_section_favourites">
+                        <div class="cards_set_container_favourites">
+                            <div class="cards_set_section_favourites"></div>
+                        </div>
+                    </div>
+    
+                    <div class="navigation_buttons_container">
+                        <button class="navigation_button_container_left_for_favourites">
+                            <svg class="navigation_arrow_left" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+                                <g>
+                                    <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
+                                </g>
+                            </svg>
+                        </button>
+    
+                        <button class="navigation_button_container_right_for_favourites">
+                            <svg class="navigation_arrow_right" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 492.004 492.004" style="enable-background:new 0 0 492.004 492.004;" xml:space="preserve">
+                                <g>
+                                    <path d="M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12    c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028    c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265    c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z"/>
+                                </g>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="browse_container">
+                    <a href="#" class="browse">
+                        <div class="background_purple"></div>
+                        <span>Browse The Store</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="news_section">
+                <div class="hr_line"></div>
+
+                <div class="main_news_container">
+                    <div class="background_grey">
+                        <div class="main_news_content">
+                            <div class="main_news_content_left">
+                                <div class="main_new_descreption">
+                                    <div class="main_news_header_container">
+                                        <h1 class="main_news_header">Battlefield 2042 has been revealed!</h1>
+                                    </div>
+        
+                                    <div class="main_news_parapgraph_container">
+                                        <p class="main_news_paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum quos quia voluptas doloribus dolore rem velit magni architecto porro, molestias soluta suscipit voluptate maiores libero fuga laboriosam non animi vitae.</p>
+                                    </div>
+                                </div>
+        
+                                <div class="main_news_video_container">
+                                    <iframe width="460" height="255" src="https://www.youtube.com/embed/ASzOzrB-a9E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+                                </div>
+                            </div>
+
+                            <div class="main_news_content_right">
+                                <div class="main_news_grid_container">
+                                    <button class="overview_image_button"><img src="images/bf2042_overview1.jpg" alt="bf2042 screenshot" class="overview_image" id="overview_1"></button>
+                                    <button class="overview_image_button"><img src="images/bf2042_overview2.jpg" alt="bf2042 screenshot" class="overview_image" id="overview_2"></button>
+                                    <button class="overview_image_button"><img src="images/bf2042_overview3.jpg" alt="bf2042 screenshot" class="overview_image" id="overview_3"></button>
+                                    <button class="overview_image_button"><img src="images/bf2042_overview4.jpg" alt="bf2042 screenshot" class="overview_image" id="overview_4"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="other_news_container">
+                    <div class="other_news_content">
+                        <a class="news_box" href="#">
+                            <div class="news_box_image" style="background-image: url(images/eft_news.png);"></div>
+                            
+                            <div class="news_box_descreption">
+                                <h1 class="news_box_header">Escape From Tarkov Patch 0.12.11.1.13124 now avialable</h1>
+
+                                <p class="news_box_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima laborum facere nemo accusantium laboriosam atque iste in fugit eaque porro eos nihil eum id, rerum repudiandae velit debitis repellendus distinctio.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi voluptates quo dolores, optio placeat beatae quidem, porro consequuntur doloribus, ex numquam eveniet fugit corporis rerum? Voluptate quibusdam possimus doloremque dolore?
+                                </p>
+                            </div>
+                        </a>
+
+                        <a class="news_box" href="#">
+                            <div class="news_box_image" style="background-image: url(images/atomic_heart_news.png);"></div>
+                            
+                            <div class="news_box_descreption">
+                                <h1 class="news_box_header">Atomic Heart in development</h1>
+
+                                <p class="news_box_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima laborum facere nemo accusantium laboriosam atque iste in fugit eaque porro eos nihil eum id, rerum repudiandae velit debitis repellendus distinctio.
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ducimus quia ab assumenda praesentium ad vel laudantium dolorum nostrum provident esse, eaque earum quasi nihil quisquam aut at, dolore ipsum.
+                                </p>
+                            </div>
+                        </a>
+
+                        <a class="news_box" href="#">
+                            <div class="news_box_image" style="background-image: url(images/parallel_logo[500x500].png);"></div>
+                            
+                            <div class="news_box_descreption">
+                                <h1 class="news_box_header">New Deals at PARALLEL</h1>
+
+                                <p class="news_box_paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima laborum facere nemo accusantium laboriosam atque iste in fugit eaque porro eos nihil eum id.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="browse_container">
+                    <a href="#" class="browse">
+                        <div class="background_purple"></div>
+                        <span>Browse The News</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="faq_section">
+                <div class="hr_line"></div>
+
+                <div class="faq_section_header_container">
+                    <h1 class="faq_section_header">FAQ</h1>
+                </div>
+
+                <div class="faq_content_container">
+                    <div class="faq_content">
+                        <div class="faq_box">
+                            <div class="faq_question" ViewAnswer="false">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe cumque quidem asperiores, quam error praesentium?</div>
+                            <span class="faq_answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sed ad facilis, facere reiciendis quos perferendis. Maxime ex voluptate.</span>
+                        </div>
+
+                        <div class="faq_box">
+                            <div class="faq_question" ViewAnswer="false">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo suscipit voluptatem mollitia animi earum at! Sint assumenda corporis sequi, necessitatibus similique esse ex nesciunt voluptates soluta. Libero impedit atque iste?</div>
+                            <span class="faq_answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sed ad facilis, facere reiciendis.</span>
+                        </div>
+
+                        <div class="faq_box">
+                            <div class="faq_question" ViewAnswer="false">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos aut error maiores?</div>
+                            <span class="faq_answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem pariatur laudantium, distinctio nam ipsam, modi culpa totam molestiae facere voluptas iusto sit, itaque quasi! Accusamus repellat impedit temporibus alias.
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum error voluptatum, veniam sit quidem sapiente amet reprehenderit perspiciatis magni impedit magnam porro non fuga. Aliquid mollitia ad quidem eaque in.
+                            </span>
+                        </div>
+
+                        <div class="faq_box">
+                            <div class="faq_question" ViewAnswer="false">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe cumque quidem asperiores, quam error praesentium?</div>
+                            <span class="faq_answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sed ad facilis.</span>
+                        </div>
+
+                        <div class="faq_box">
+                            <div class="faq_question" ViewAnswer="false">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo suscipit voluptatem mollitia?</div>
+                            <span class="faq_answer">Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
+                        </div>
+
+                        <div class="faq_box">
+                            <div class="faq_question" ViewAnswer="false">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos aut error maiores, rem, velit tenetur officiis eveniet laudantium quisquam totam deserunt sed blanditiis necessitatibus perspiciatis deleniti at, impedit in natus!</div>
+                            <span class="faq_answer">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem pariatur laudantium, distinctio nam ipsam, modi culpa totam molestiae facere voluptas iusto sit, itaque quasi! Accusamus repellat impedit temporibus alias.
+                                Lorem ipsum dolor.
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="browse_container">
+                    <a href="#" class="browse">
+                        <div class="background_purple"></div>
+                        <span>Read the FAQ</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="site_footer">
+                <div class="footer_content">
+                    <div class="footer_links_container">
+                        <div class="sociel_media_links">
+                            <a href="#" class="footer_link">Youtube</a>
+                            <a href="#" class="footer_link">Facebook</a>
+                            <a href="#" class="footer_link">Twitter</a>
+                        </div>
+
+                        <div class="resources_links">
+                            <a href="#" class="footer_link">Support a creator</a>
+                            <a href="#" class="footer_link">Publish on Parallel</a>
+                            <a href="#" class="footer_link">Careers</a>
+                            <a href="#" class="footer_link">Company</a>
+                            <a href="#" class="footer_link">Fan Art Policy</a>
+                            <a href="#" class="footer_link">UX Research</a>
+                            <a href="#" class="footer_link">Store EULA</a>
+                            <a href="#" class="footer_link">Online Services</a>
+                            <a href="#" class="footer_link">Community Rules</a>
+                        </div>
+
+                        <div class="policy_links">
+                            <a href="#" class="footer_link">Terms of Service</a>
+                            <a href="#" class="footer_link">Privacy Policy</a>
+                            <a href="#" class="footer_link">Store Refund Policy</a>
+                        </div>
+                    </div>
+
+                    <div class="footer_copyrights">
+                        <div class="copyright_paragraph_container">
+                            <p class="copyright_paragraph">© 2021, Parallel, Inc. All rights reserved. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus quod quam, perspiciatis cupiditate distinctio nemo pariatur, beatae veritatis placeat aspernatur accusamus repudiandae voluptatem? Est sequi labore tempore itaque incidunt neque.</p>
+                        </div>
+
+                        <div class="footer_logo_container">
+                            <svg  class="footer_logo" viewBox="0 0 447 112" xmlns="http://www.w3.org/2000/svg">
+                                <path class="logo_alphapet" d="M52.128 35.672C52.128 41.24 50.208 45.88 46.368 49.592C42.592 53.24 36.8 55.064 28.992 55.064H16.128V83H7.392V16.088H28.992C36.544 16.088 42.272 17.912 46.176 21.56C50.144 25.208 52.128 29.912 52.128 35.672ZM28.992 47.864C33.856 47.864 37.44 46.808 39.744 44.696C42.048 42.584 43.2 39.576 43.2 35.672C43.2 27.416 38.464 23.288 28.992 23.288H16.128V47.864H28.992ZM59.7218 56.504C59.7218 51.128 60.8098 46.424 62.9858 42.392C65.1618 38.296 68.1378 35.128 71.9138 32.888C75.7538 30.648 80.0098 29.528 84.6818 29.528C89.2898 29.528 93.2898 30.52 96.6818 32.504C100.074 34.488 102.602 36.984 104.266 39.992V30.392H113.098V83H104.266V73.208C102.538 76.28 99.9458 78.84 96.4898 80.888C93.0978 82.872 89.1298 83.864 84.5858 83.864C79.9138 83.864 75.6898 82.712 71.9138 80.408C68.1378 78.104 65.1618 74.872 62.9858 70.712C60.8098 66.552 59.7218 61.816 59.7218 56.504ZM104.266 56.6C104.266 52.632 103.466 49.176 101.866 46.232C100.266 43.288 98.0898 41.048 95.3378 39.512C92.6498 37.912 89.6738 37.112 86.4098 37.112C83.1458 37.112 80.1698 37.88 77.4818 39.416C74.7938 40.952 72.6498 43.192 71.0498 46.136C69.4498 49.08 68.6498 52.536 68.6498 56.504C68.6498 60.536 69.4498 64.056 71.0498 67.064C72.6498 70.008 74.7938 72.28 77.4818 73.88C80.1698 75.416 83.1458 76.184 86.4098 76.184C89.6738 76.184 92.6498 75.416 95.3378 73.88C98.0898 72.28 100.266 70.008 101.866 67.064C103.466 64.056 104.266 60.568 104.266 56.6ZM136.597 38.936C138.133 35.928 140.309 33.592 143.125 31.928C146.005 30.264 149.493 29.432 153.589 29.432V38.456H151.285C141.493 38.456 136.597 43.768 136.597 54.392V83H127.861V30.392H136.597V38.936ZM160.409 56.504C160.409 51.128 161.497 46.424 163.673 42.392C165.849 38.296 168.825 35.128 172.601 32.888C176.441 30.648 180.697 29.528 185.369 29.528C189.977 29.528 193.977 30.52 197.369 32.504C200.761 34.488 203.289 36.984 204.953 39.992V30.392H213.785V83H204.953V73.208C203.225 76.28 200.633 78.84 197.177 80.888C193.785 82.872 189.817 83.864 185.273 83.864C180.601 83.864 176.377 82.712 172.601 80.408C168.825 78.104 165.849 74.872 163.673 70.712C161.497 66.552 160.409 61.816 160.409 56.504ZM204.953 56.6C204.953 52.632 204.153 49.176 202.553 46.232C200.953 43.288 198.777 41.048 196.025 39.512C193.337 37.912 190.361 37.112 187.097 37.112C183.833 37.112 180.857 37.88 178.169 39.416C175.481 40.952 173.337 43.192 171.737 46.136C170.137 49.08 169.337 52.536 169.337 56.504C169.337 60.536 170.137 64.056 171.737 67.064C173.337 70.008 175.481 72.28 178.169 73.88C180.857 75.416 183.833 76.184 187.097 76.184C190.361 76.184 193.337 75.416 196.025 73.88C198.777 72.28 200.953 70.008 202.553 67.064C204.153 64.056 204.953 60.568 204.953 56.6Z"/>
+                                <path class="logo_alphapet" d="M374.392 54.68C374.392 56.344 374.296 58.104 374.104 59.96H332.056C332.376 65.144 334.136 69.208 337.336 72.152C340.6 75.032 344.536 76.472 349.144 76.472C352.92 76.472 356.056 75.608 358.552 73.88C361.112 72.088 362.904 69.72 363.928 66.776H373.336C371.928 71.832 369.112 75.96 364.888 79.16C360.664 82.296 355.416 83.864 349.144 83.864C344.152 83.864 339.672 82.744 335.704 80.504C331.8 78.264 328.728 75.096 326.488 71C324.248 66.84 323.128 62.04 323.128 56.6C323.128 51.16 324.216 46.392 326.392 42.296C328.568 38.2 331.608 35.064 335.512 32.888C339.48 30.648 344.024 29.528 349.144 29.528C354.136 29.528 358.552 30.616 362.392 32.792C366.232 34.968 369.176 37.976 371.224 41.816C373.336 45.592 374.392 49.88 374.392 54.68ZM365.368 52.856C365.368 49.528 364.632 46.68 363.16 44.312C361.688 41.88 359.672 40.056 357.112 38.84C354.616 37.56 351.832 36.92 348.76 36.92C344.344 36.92 340.568 38.328 337.432 41.144C334.36 43.96 332.6 47.864 332.152 52.856H365.368Z"/>
+                                <path class="logo_arrow" d="M220.553 105.395C220.771 106.194 221.595 106.665 222.395 106.447L235.419 102.895C236.218 102.677 236.689 101.852 236.471 101.053C236.253 100.254 235.429 99.7828 234.63 100.001L223.052 103.158L219.895 91.581C219.677 90.7818 218.852 90.3106 218.053 90.5285C217.254 90.7465 216.783 91.5711 217.001 92.3704L220.553 105.395ZM276.698 6.25579L220.698 104.256L223.302 105.744L279.302 7.74421L276.698 6.25579Z"/>
+                                <path class="logo_arrow" d="M312.885 6.61179C312.67 5.81159 311.848 5.33672 311.048 5.55113L298.008 9.04519C297.207 9.2596 296.732 10.0821 296.947 10.8823C297.161 11.6825 297.984 12.1574 298.784 11.943L310.375 8.83714L313.481 20.4282C313.695 21.2284 314.518 21.7033 315.318 21.4889C316.118 21.2745 316.593 20.452 316.379 19.6518L312.885 6.61179ZM256.299 105.5L312.735 7.75002L310.137 6.25002L253.701 104L256.299 105.5Z"/>
+                                <path class="logo_arrow" d="M436.885 6.61179C436.67 5.81159 435.848 5.33672 435.048 5.55113L422.008 9.04519C421.207 9.2596 420.732 10.0821 420.947 10.8823C421.161 11.6825 421.984 12.1574 422.784 11.943L434.375 8.83714L437.481 20.4282C437.695 21.2284 438.518 21.7033 439.318 21.4889C440.118 21.2745 440.593 20.452 440.379 19.6518L436.885 6.61179ZM380.299 105.5L436.735 7.75002L434.137 6.25002L377.701 104L380.299 105.5Z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
+
